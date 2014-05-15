@@ -1,4 +1,4 @@
-# Marionette Sample which implement Tab with Yeoman
+# Marionette Sample that implements Tab with Yeoman
 ## ヨーマンでタブ機能を実装したマリオネットのサンプル
 ===
 
