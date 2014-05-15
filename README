@@ -1,0 +1,12 @@
+#Marionette Sample which implement Tab with Yeoman
+##ヨーマンでタブ機能を実装したマリオネットのサンプル
+
+Application
+|
+Router
+|
+Controller
+|
+CompositeView
+|
+Itemview
