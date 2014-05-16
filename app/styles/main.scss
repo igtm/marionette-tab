@@ -16,17 +16,58 @@ nav ul {
 }
 nav li {
   display: block;
-  -webkit-box-pack: justify;
-  -webkit-box-flex: 1;
-}
-nav a {
-  color: #fff;
   background: #333;
+  color: #ffffff;
   line-height:3.0;
-  padding:6px 0;
+  text-align: center;
+  width: 33.3%;
+  margin:0;
   border-left:1px solid #fff;
-  text-align:center;
-  text-decoration: none;
+  text-shadow:0 -1px 0px #333,0 1px 0px #555;
+  -webkit-box-pack: justify;
+  background: #3498db;
 }
-nav a:hover { background:#F30; }
-// ===== height ===== //
+
+nav .checked {
+  background: #2980b9;
+}
+// ===== text ===== //
+h1 {
+  text-align: center;
+}
+
+// ===== lists ===== //
+#lists {
+  list-style: none;
+  overflow: hidden;
+  width: 300px;
+  padding: 0;
+  margin: 50px auto 100px;
+}
+#lists li {
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #879c18;
+
+  display: block;
+  position: relative;
+  z-index: 10;
+  height: 40px;
+  padding: 0px 10px 0px 50px;
+  background: #a1b91d;
+  color: #fff;
+  font-size: 14px;
+  line-height: 40px;
+  font-weight: bold;
+}
+#lists li:last-child {
+  border-bottom: 0px;
+}
+
+// ===== others ===== //
+#input {
+  margin:auto,0;
+}

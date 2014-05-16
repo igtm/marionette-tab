@@ -10,7 +10,9 @@ function( Backbone ) {
 			console.log("initialize a List model");
 		},
 
-		defaults: {},
+		defaults: {
+            title: ''
+        },
 
     });
 });

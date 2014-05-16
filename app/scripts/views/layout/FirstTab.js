@@ -12,9 +12,6 @@ function( Backbone, FirsttabTmpl, ContentCompositeView, HeaderItemView ) {
 
 		initialize: function() {
 			console.log("initialize a Firsttab Layout");
-            this.render();
-            this.header.show(new HeaderItemView());
-            this.content.show(new ContentCompositeView({collection: this.collection}));
 		},
 		
     	template: FirsttabTmpl,

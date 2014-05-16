@@ -45,7 +45,7 @@ module.exports = function (grunt) {
                     
                     'test/spec/{,**/}*.js'
                 ],
-                tasks: [], //'exec'
+                tasks: [], //['exec']にすると、grunt時にチェックしてくれるけど遅くなる
                 options: {
                     livereload: true
                 }

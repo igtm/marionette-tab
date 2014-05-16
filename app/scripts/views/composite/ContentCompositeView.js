@@ -1,9 +1,11 @@
 define([
 	'backbone',
+    'jquery',
 	'views/item/ContentItemView',
+    'models/List',
 	'hbs!tmpl/composite/ContentCompositeView_tmpl'
 ],
-function( Backbone, Contentitemview, ContentcompositeviewTmpl  ) {
+function( Backbone, $, Contentitemview, List, ContentcompositeviewTmpl  ) {
     'use strict';
 
 	/* Return a CompositeView class definition */
@@ -19,13 +21,32 @@ function( Backbone, Contentitemview, ContentcompositeviewTmpl  ) {
     	
 
     	/* ui selector cache */
-    	ui: {},
+    	ui: {
+            input: '#input',
+            lists: '#lists'
+        },
 
     	/* where are we appending the items views */
     	itemViewContainer: "#lists",
 
 		/* Ui events hash */
-		events: {},
+		events: {
+            'keypress #input': 'enter'
+        },
+
+        modelEvents: {
+          'change': 'render'
+        },
+
+        enter: function(e){
+            if(e.keyCode !== 13){return;} // enter
+            console.log(this.ui.input.val());
+
+            if(!this.ui.input.val() === ''){return;} // ''
+            var model = new List({title: this.ui.input.val()});
+            this.collection.add(model);
+            this.ui.input.val('');
+        },
 
 		/* on render callback */
 		onRender: function() {}

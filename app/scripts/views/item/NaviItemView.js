@@ -1,8 +1,10 @@
 define([
 	'backbone',
+     'jquery',
+     'communicator',
 	'hbs!tmpl/item/NaviItemView_tmpl'
 ],
-function( Backbone, NaviitemviewTmpl  ) {
+function( Backbone,$, Communicator, NaviitemviewTmpl  ) {
     'use strict';
 
 	/* Return a ItemView class definition */
@@ -18,15 +20,23 @@ function( Backbone, NaviitemviewTmpl  ) {
         
 
     	/* ui selector cache */
-    	ui: {},
+    	ui: {
+        },
 
 		/* Ui events hash */
 		events: {
-            'click a': 'checked'
+            'click li': 'checked'
         },
 
-        checked: function(attrs){
-            console.log(attrs);
+        checked: function(e){ // eはクリックされたオブジェクト。target.idでid target.classNameでclassを取得できる
+            var className = e.target.className;
+            var id = e.target.id;
+            var current_checked = this.$el.find('.checked');
+            if(className !== 'checked'){
+                this.$el.find('#'+id).addClass('checked');
+                current_checked.removeClass('checked');
+                Communicator.command.execute(id); // -> Router
+            }
         },
 		/* on render callback */
 		onRender: function() {}

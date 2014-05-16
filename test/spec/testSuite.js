@@ -8,6 +8,7 @@ define(function() {
 		'spec/exampleTest.js',
 		'spec/models/List.js',
 		'spec/regions/AppRegion.js',
+		'spec/regions/ContainerRegion.js',
 		'spec/routers/MyRouter.js',
 		'spec/routers/Router.js',
 		'spec/views/composite/ContentCompositeView.js',

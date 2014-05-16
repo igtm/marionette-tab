@@ -1,27 +1,29 @@
 define([
 	'backbone',
+    'communicator',
     'views/layout/FirstTab',
     'Views/item/NaviItemView'
 ],
-function( Backbone, FirstTab, NaviItemView ) {
+function( Backbone,Communicator, FirstTab, NaviItemView ) {
     'use strict';
 
 	return Backbone.Marionette.Controller.extend({
 
-        //初期画面
 		initialize: function( options ) {
 			console.log("initialize a Routercontroller Controller");
-            window.App.container.show(new FirstTab({collection: window.App.lists}));
-            window.App.navi.show(new NaviItemView());
+
 		},
         first: function(){
             console.log('first');
+            Communicator.command.execute('firstTab',true);
         },
         second: function(){
             console.log('second');
+            Communicator.command.execute('secondTab',true);
         },
         third: function(){
             console.log('third');
+            Communicator.command.execute('thirdTab',true);
         }
 
 	});

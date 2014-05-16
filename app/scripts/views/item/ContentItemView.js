@@ -13,6 +13,8 @@ function( Backbone, ContentitemviewTmpl  ) {
 		},
 		
     	template: ContentitemviewTmpl,
+
+        tagName: 'li',
         
 
     	/* ui selector cache */

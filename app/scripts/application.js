@@ -3,25 +3,26 @@ define([
 	'communicator',
     'collections/Lists',
     'routers/MyRouter',
-    'controllers/RouterController'
+    'controllers/RouterController',
+    'regions/ContainerRegion',
+    'views/item/NaviItemView'
 ],
 
-function( Backbone, Communicator, Lists, MyRouter, RouterController ) {
+function( Backbone, Communicator, Lists, MyRouter, RouterController, ContainerRegion, NaviItemView ) {
     'use strict';
 
 	var App = new Backbone.Marionette.Application();
 
 	/* Add application regions here */
 	App.addRegions({
-        container : '#container',
+        container : new ContainerRegion(),
         navi : '#navi'
     });
 
 	/* Add initializers here */
 	App.addInitializer( function () {
         console.log('App.initializer');
-        App.lists = new Lists();
-        window.App = App;
+        App.navi.show(new NaviItemView());
 
         var RC = new RouterController();
         new MyRouter({controller: RC});
