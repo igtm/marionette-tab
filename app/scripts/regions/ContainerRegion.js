@@ -17,7 +17,10 @@ function( Backbone, Communicator, FirstTabLayout, Lists, HeaderItemView, Content
             Communicator.command.setHandler('firstTab',this.firstTab,this);
             Communicator.command.setHandler('secondTab',this.secondTab,this);
             Communicator.command.setHandler('thirdTab',this.thirdTab,this);
-            this.firstTab();
+
+            this.firstCollection = new Lists();
+            this.secondCollection = new Lists();
+            this.thirdCollection = new Lists();
         },
         el: '#container',
 
@@ -25,19 +28,19 @@ function( Backbone, Communicator, FirstTabLayout, Lists, HeaderItemView, Content
                 this.first = new FirstTabLayout();
                 this.show(this.first);
                 this.first.header.show(new HeaderItemView());
-                this.first.content.show(new ContentCompositeView({collection: new Lists()}));
+                this.first.content.show(new ContentCompositeView({collection: this.firstCollection}));
         },
         secondTab: function(){
                 this.second = new FirstTabLayout();
                 this.show(this.second);
                 this.second.header.show(new HeaderItemView());
-                this.second.content.show(new ContentCompositeView({collection: new Lists()}));
+                this.second.content.show(new ContentCompositeView({collection: this.secondCollection}));
         },
         thirdTab: function(){
                 this.third = new FirstTabLayout();
                 this.show(this.third);
                 this.third.header.show(new HeaderItemView());
-                this.third.content.show(new ContentCompositeView({collection: new Lists()}));
+                this.third.content.show(new ContentCompositeView({collection: this.thirdCollection}));
         }
 	});
 

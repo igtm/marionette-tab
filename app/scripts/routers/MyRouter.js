@@ -16,6 +16,7 @@ function(Backbone, Communicator){
         },
 
 		appRoutes: {
+            '': 'first',
             'first': 'first',
             'second': 'second',
             'third': 'third'
