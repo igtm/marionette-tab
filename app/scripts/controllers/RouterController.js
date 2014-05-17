@@ -15,15 +15,15 @@ function( Backbone,Communicator, FirstTab, NaviItemView ) {
 		},
         first: function(){
             console.log('first');
-            Communicator.command.execute('firstTab',true);
+            Communicator.command.execute('firstTab',true); // -> ContainerRegion
         },
         second: function(){
             console.log('second');
-            Communicator.command.execute('secondTab',true);
+            Communicator.command.execute('secondTab',true); // -> ContainerRegion
         },
         third: function(){
             console.log('third');
-            Communicator.command.execute('thirdTab',true);
+            Communicator.command.execute('thirdTab',true); // -> ContainerRegion
         }
 
 	});

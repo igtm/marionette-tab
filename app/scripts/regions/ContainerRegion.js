@@ -25,39 +25,24 @@ function( Backbone, Communicator, FirstTabLayout, Lists, HeaderItemView, Content
         },
         el: '#container',
 
-        //それぞれ３枚のViewを[this.--TLayout],[this.--HItemView],[this.--CCompositeView]に保存
+        //それぞれ Layout HeaderItemView ContentComposteView を作成
         firstTab: function(){
-            if(!this.FTLayout) { //初回のみ３枚のViewを作成
-                console.log('作成！！');
-                this.FTLayout = new FirstTabLayout();
-                this.FHItemView = new HeaderItemView();
-                this.FCCompositeView = new ContentCompositeView(({collection: this.firstCollection}));
-            }
-                this.show(this.FTLayout,{preventClose: true});
-                this.FTLayout.header.show(this.FHItemView,{preventClose: true});
-                this.FTLayout.content.show(this.FCCompositeView,{preventClose: true});
+                this.FTLayout = new FirstTabLayout(); //Layout 作成
+                this.show(this.FTLayout);            // Layout 表示
+                this.FTLayout.header.show(new HeaderItemView());
+                this.FTLayout.content.show(new ContentCompositeView(({collection: this.firstCollection})));
         },
         secondTab: function(){
-            if(!this.STLayout) { //初回のみ３枚のViewを作成
-                console.log('作成！！');
                 this.STLayout = new FirstTabLayout();
-                this.SHItemView = new HeaderItemView();
-                this.SCCompositeView = new ContentCompositeView(({collection: this.secondCollection}));
-            }
-                this.show(this.STLayout,{preventClose: true});
-                this.STLayout.header.show(this.SHItemView,{preventClose: true});
-                this.STLayout.content.show(this.SCCompositeView,{preventClose: true});
+                this.show(this.STLayout);
+                this.STLayout.header.show(new HeaderItemView());
+                this.STLayout.content.show(new ContentCompositeView(({collection: this.secondCollection})));
         },
         thirdTab: function(){
-            if(!this.TTLayout) { //初回のみ３枚のViewを作成
-                console.log('作成！！');
                 this.TTLayout = new FirstTabLayout();
-                this.THItemView = new HeaderItemView();
-                this.TCCompositeView = new ContentCompositeView(({collection: this.thirdCollection}));
-            }
-                this.show(this.TTLayout,{preventClose: true});
-                this.TTLayout.header.show(this.THItemView,{preventClose: true});
-                this.TTLayout.content.show(this.TCCompositeView,{preventClose: true});
+                this.show(this.TTLayout);
+                this.TTLayout.header.show(new HeaderItemView());
+                this.TTLayout.content.show(new ContentCompositeView(({collection: this.thirdCollection})));
         }
 	});
 
