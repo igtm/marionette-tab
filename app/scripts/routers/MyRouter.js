@@ -22,13 +22,13 @@ function(Backbone, Communicator){
             'third': 'third'
         },
         first: function(){
-            this.navigate('#first', true);
+            this.navigate('first', true);
         },
         second: function(){
-            this.navigate('#second', true);
+            this.navigate('second', true);
         },
         third: function(){
-            this.navigate('#third', true);
+            this.navigate('third', true);
         }
 	});
 });

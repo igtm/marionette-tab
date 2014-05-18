@@ -15,7 +15,14 @@ define(function() {
 		'spec/views/item/ContentItemView.js',
 		'spec/views/item/HeaderItemView.js',
 		'spec/views/item/NaviItemView.js',
-		'spec/views/layout/FirstTab.js'
+		'spec/views/layout/FirstTab.js',
+		'spec/views/layout/SecondTab.js',
+		'spec/views/composite/SContentCompositeView.js',
+		'spec/views/item/SContentItemView.js',
+		'spec/views/item/SHeaderItemView.js',
+		'spec/collections/Results.js',
+		'spec/models/Result.js',
+		'spec/php/test.php'
 		]
 	};
 });

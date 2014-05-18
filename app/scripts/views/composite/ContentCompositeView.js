@@ -34,10 +34,6 @@ function( Backbone, $, Contentitemview, List, ContentcompositeviewTmpl  ) {
             'keypress #input': 'enter'
         },
 
-        modelEvents: {
-          'change': 'render'
-        },
-
         enter: function(e){
             if(e.keyCode !== 13){return;} // enter
             console.log(this.ui.input.val());

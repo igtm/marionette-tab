@@ -3,10 +3,14 @@ define([
     'communicator',
     'views/layout/FirstTab',
     'collections/Lists',
+    'collections/Results',
     'views/item/HeaderItemView',
-    'views/composite/ContentCompositeView'
+    'views/composite/ContentCompositeView',
+    'views/layout/SecondTab',
+    'views/item/SHeaderItemView',
+    'views/composite/SContentCompositeView'
 ],
-function( Backbone, Communicator, FirstTabLayout, Lists, HeaderItemView, ContentCompositeView) {
+function( Backbone, Communicator, FirstTabLayout, Lists, Results, HeaderItemView, ContentCompositeView, SecondTabLayout, SHeaderItemView, SContentCompositeView) {
     'use strict';
 
 	/* Return a Region class definition */
@@ -20,7 +24,7 @@ function( Backbone, Communicator, FirstTabLayout, Lists, HeaderItemView, Content
 
             // Layout ごとのコレクション
             this.firstCollection = new Lists();
-            this.secondCollection = new Lists();
+            this.secondCollection = new Results();
             this.thirdCollection = new Lists();
         },
         el: '#container',
@@ -33,10 +37,10 @@ function( Backbone, Communicator, FirstTabLayout, Lists, HeaderItemView, Content
                 this.FTLayout.content.show(new ContentCompositeView(({collection: this.firstCollection})));
         },
         secondTab: function(){
-                this.STLayout = new FirstTabLayout();
+                this.STLayout = new SecondTabLayout();
                 this.show(this.STLayout);
-                this.STLayout.header.show(new HeaderItemView());
-                this.STLayout.content.show(new ContentCompositeView(({collection: this.secondCollection})));
+                this.STLayout.header.show(new SHeaderItemView());
+                this.STLayout.content.show(new SContentCompositeView(({collection: this.secondCollection})));
         },
         thirdTab: function(){
                 this.TTLayout = new FirstTabLayout();
