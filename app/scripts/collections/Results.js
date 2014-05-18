@@ -16,7 +16,7 @@ function( Backbone, Result ) {
         url: 'http://i-and-i.main.jp/sample/php/test.php',
 
         parse: function(res){
-            console.log('fetchのparse:'+res);
+            console.log('fetchのparse');
             return res;
         }
 		
