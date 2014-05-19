@@ -3,11 +3,17 @@
 body {
   width: 100%;
 }
+// ===== container ===== //
+#container {
+ z-index: 0;
+}
+
 // ===== nav ===== //
 nav {
+  z-index: 10;
   bottom:0;
   width:100%;
-  position: absolute;
+  position: fixed;
 }
 nav ul {
   padding-left: 0;

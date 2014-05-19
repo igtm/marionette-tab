@@ -62,13 +62,11 @@ function( Backbone, Scontentitemview, ScontentcompositeviewTmpl, Result, Communi
                     }}
                 );
             }
-
-
+            this.ui.num1.val('');
+            this.ui.num2.val('');
         },
         fetchCompleted: function(){ // loading 画面のためだけに設置（loading表示->fetch->Model作成->collection追加->add発生->loading消去）
             this.ui.loading.empty();
-            this.ui.num1.val('');
-            this.ui.num2.val('');
         },
 
         invalid: function(){

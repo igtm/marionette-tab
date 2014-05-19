@@ -37,8 +37,7 @@ function( Backbone, $, Contentitemview, List, ContentcompositeviewTmpl  ) {
         enter: function(e){
             if(e.keyCode !== 13){return;} // enter
             console.log(this.ui.input.val());
-
-            if(!this.ui.input.val() === ''){return;} // ''
+            if(this.ui.input.val() === ''){return;} // ''
             var model = new List({title: this.ui.input.val()});
             this.collection.add(model);
             this.ui.input.val('');
