@@ -4,7 +4,11 @@
 
 ## 画面
 - Region(#container)中身
-    - Layout(1枚目)
+    - Layout(1枚目FirstTab)
+        - ItemView(#header)
+        - CompositeView(#content)
+            - ItemView
+    - Layout(2枚目SecondTab)
         - ItemView(#header)
         - CompositeView(#content)
             - ItemView
