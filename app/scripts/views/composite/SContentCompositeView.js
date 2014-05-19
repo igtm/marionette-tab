@@ -43,13 +43,13 @@ function( Backbone, Scontentitemview, ScontentcompositeviewTmpl, Result, Communi
 
         calculate: function(){
             console.log('calculate');
-            this.ui.loading.html('<img src="images/loading.gif" />');
             var num1 = this.ui.num1.val();
             var num2 = this.ui.num2.val();
             this.ui.error.html(''); //errorを空に
             if(_.isEmpty(num1) || _.isEmpty(num2)){ //手作りvalidate（本当はModel#validateを使うのだと思うけど）
                 this.invalid();
             }else {
+                this.ui.loading.html('<img src="images/loading.gif" />');
                 this.collection.fetch(
                     {
                         data:{num1: Number(num1), num2: Number(num2)},
