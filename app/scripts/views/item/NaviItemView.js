@@ -25,7 +25,7 @@ function( Backbone,$, Communicator, NaviitemviewTmpl  ) {
 
 		/* Ui events hash */
 		events: {
-            'click li': 'checked'
+            'touchstart li': 'checked'
         },
 
         checked: function(e){ // eはクリックされたオブジェクト。target.idでid target.classNameでclassを取得できる

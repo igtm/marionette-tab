@@ -59,7 +59,8 @@ function( Backbone, Scontentitemview, ScontentcompositeviewTmpl, Result, Communi
                              console.log(res);
                         },error: function(){
                              console.log('error');
-                    }}
+                        }
+                    }
                 );
             }
             this.ui.num1.val('');
